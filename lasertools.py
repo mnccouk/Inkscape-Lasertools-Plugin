@@ -1877,17 +1877,17 @@ class laser_gcode(inkex.Effect):
             "id": "Laser Engraver Infill",
             "penetration feed": self.options.laser_speed,
             "feed": self.options.laser_speed,
-            "gcode before path": ("G04 P" + self.options.power_delay + " " + self.options.laser_command),
-            "gcode after path": self.options.laser_off_command
-        }
+	    "gcode before path": ("M400\n" + self.options.laser_command + "\n" + "G04 P" + self.options.power_delay),
+            "gcode after path": ("M400\n" + self.options.laser_off_command + "\n" + "G04 P" + self.options.power_delay)
+	}
 
         self.tool_perimeter = {
             "name": "Laser Engraver Perimeter",
             "id": "Laser Engraver Perimeter",
             "penetration feed": self.options.laser_param_speed,
             "feed": self.options.laser_param_speed,
-            "gcode before path": ("G04 P" + self.options.power_delay + " " + self.options.laser_command_perimeter),
-            "gcode after path": self.options.laser_off_command
+	    "gcode before path": ("M400\n" + self.options.laser_command_perimeter + "\n" + "G04 P" + self.options.power_delay),
+            "gcode after path": ("M400\n" + self.options.laser_off_command + "\n" + "G04 P" + self.options.power_delay)
         }
 
         self.get_info()
