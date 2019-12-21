@@ -1,3 +1,9 @@
+# Fork to tweak code to work with PWM laser fitted to Wanhao duplicator i3 3D Printer
+Modifications
+Extra hardware is required with this code - aruduino, that converts low frequency(15Hz) printer PWM to higher PWM of 490Hz
+M400 codes added prior to laser activation and deactivation to ensure all previous commands have finished before turning laser on\off
+Power on-Delay also added to power off function to allow PWM intensity to be utilised with laser on command, this decouples laser power off from a PWM value.
+
 # Inkscape-Lasertools-Plugin
 A simple plugin to convert Inkscape vector graphics to Gcode for DIY laser engravers
 
